@@ -43,7 +43,7 @@ Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
 
-Closures are the primary mechanism used to enable data privacy. It does this by only allowing access to data within variables to the containing function.
+Closures are the primary mechanism used to enable data privacy. It does this by only allowing access to data within variables to the containing function. Closures also allow you to remember data and operate on that data through returned functions.
 
 2. Study the following code, then answer the questions below.
 
@@ -66,7 +66,7 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?  
-The closure is used at the variable newRoll.  I can tell because it is declared within the anonymous function inside the personalDice function and therefore can only be accessed within the scope of that function.
+The closure is used at the variables dansRoll and zoesRoll.  I can tell because they are used to contain the data inside the variable newRoll and the nested function in their lexical environments.
 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
 The variable string "Dan" will always be the same, and the variable number newRoll can change.
