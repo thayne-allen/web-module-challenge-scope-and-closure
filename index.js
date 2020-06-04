@@ -28,9 +28,15 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * In counter1, the count variable is within the scope of the counterMaker() function.  In counter2, the count variable is within the global scope.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ * The code for counter1 uses a closure.  I can tell because it defines a function inside of another function, and then exposes it by calling it from outside of the original function.
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ * The code in counter1 would be preferable any time data privacy is required for the variables within it, such as large projects with large amounts of code and functions. The code in counter2 would be better in cases that do not require data privacy and have a small amount of code with few functions.
  *
 */
 
