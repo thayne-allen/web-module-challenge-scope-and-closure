@@ -68,6 +68,8 @@ function inning(){
 
 }
 
+console.log(inning())
+
 /* Task 3: finalScore()
 
 Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
@@ -82,22 +84,23 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(inning, numberOfInnings){
-
-  let homeTeam = 0;
-  for (let i = 0; i < numberOfInnings; i++) {
-    Home = inning + numberOfInnings;
-  }
-
-  let awayTeam = 0;
-  for (let i = 0; i < numberOfInnings; i++ {
-    Away = inning + numberOfInnings;
-  }
+function finalScore(cb, innings){
+  let homeScore = 0
+  let awayScore = 0
+  
+  for (let i = 0; i < innings; i++){
+    homeScore += cb()
+    awayScore += cb()
+  } 
   return {
-    Home: homeTeam,
-    Away: awayTeam,
-  };
-}
+    Home: homeScore,
+  
+    Away: awayScore,
+     }
+  
+  }
+
+console.log(finalScore(inning, 9))
 
 /* Task 4: 
 
@@ -120,8 +123,25 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(callback, innings) {
+  let inningtext = ['1st Inning:', '2nd Inning:', '3rd Inning:', '4th Inning:', '5th Inning:', '6th Inning:', '7th Inning:', '8th Inning:', '9th Inning:', 'Extra Innings:']
+  let homeacc = 0;
+  let awayacc = 0;
+  let finalscore = [];
+  for(let i=0; i<innings;i++){
+    let newCount=()=>{
+      return function(){
+        homeacc = homeacc+(callback(0,2))
+        awayacc = awayacc+(callback(0,2))
+        return [homeacc, awayacc];
+      }}
+    const newCount1 = newCount();
+    newCount1();
+    finalscore.push(`${inningtext[i]} ${homeacc} - ${awayacc}`);
+  }
+  finalscore.push (`Final Score: ${homeacc} - ${awayacc}`)
+  return finalscore;
 }
+console.log(scoreboard(inning, 9))
 
 
