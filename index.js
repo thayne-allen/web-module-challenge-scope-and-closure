@@ -64,7 +64,7 @@ Write a function called `inning` that generates a random number of points that a
 
 function inning(){
 
-    return Math.floor(Math.random * 3)
+    return Math.floor(Math.random() * 3)
 
 }
 
@@ -131,8 +131,8 @@ function scoreboard(callback, innings) {
   for (let i=0; i < innings; i++){
     let newCount=()=>{
       return function() {
-        homeUp = homeUp + (callback(0,2))
-        awayUp = awayUp + (callback(0,2))
+        homeUp = homeUp + (callback())
+        awayUp = awayUp + (callback())
         return [homeUp, awayUp];
       }}
     const newCount1 = newCount();
