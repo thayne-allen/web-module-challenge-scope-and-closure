@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closures are the primary mechanism used to enable data privacy. It does this by only allowing access to data within variables to the containing function. Closures also allow you to remember data and operate on that data through returned functions.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -62,9 +65,14 @@ dansRoll();
 dansRoll();
 ```
 
-a. Where is closure used in this code? How can you tell?
+a. Where is closure used in this code? How can you tell?  
+The closure is used at the variables dansRoll and zoesRoll.  I can tell because they are used to contain the data inside the variable newRoll and the nested function in their lexical environments.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+The variable string "Dan" will always be the same, and the variable number newRoll can change.
+
+c. What is the lexical scope of `newRoll`?
+The lexical scope of newRoll lies within the anonymous function within the personalDice function.
 
 ### Task 3 - Stretch Goals
 
